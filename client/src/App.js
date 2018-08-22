@@ -119,6 +119,8 @@ class App extends Component {
               )}
             />
             <Route exact path="/pokerCounter" component={PokerCounter} />
+            <Route exact path="/CreateGame" component={CreateGame} />
+            <Route exact path="/profile" component={Profile} />
 
             {/* use render prop instead of component prop for Route b/c we want to pass in
             props to the rendered element (component prop won't let us do that). */}
@@ -132,8 +134,8 @@ class App extends Component {
             />
 
             <AuthRoute loggedIn={loggedIn} exact path="/table" component={PokerTable} />
-            <AuthRoute loggedIn={loggedIn} exact path="/CreateGame" component={CreateGame} />
-            <AuthRoute loggedIn={loggedIn} exact path="/profile" component={Profile} />
+            {/* <AuthRoute loggedIn={loggedIn} exact path="/CreateGame" component={CreateGame} /> */}
+            {/* <AuthRoute loggedIn={loggedIn} exact path="/profile" component={Profile} /> */}
             <AuthRoute loggedIn={loggedIn} exact path="/CardReader" component={CardReader} />
 
             <Redirect from="/logout" to="/" />
